@@ -1,0 +1,38 @@
+<div class="author">
+    <h1 class="author__heading">The Anti-Hero’s Blog</h1>
+    <p class="author__body" style="
+    margin: 5px 0 40px 0;
+    line-height: 1.7;
+    color: #cb0808da;
+    text-decoration: underline;">Welcome to Wade's World!</p>
+    <p class="author__body">
+        Dive into the mind of the Merc with a Mouth, where sarcasm meets storytelling. Expect a lot of quips, chimichangas, and a fourth wall that’s barely holding on. This isn’t just a blog—it's Deadpool’s digital playground!</p>
+  </div>
+  
+  <img src="/img/image (1).png" alt="person looking out through window" class="hero-image" width="981" height="528">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  
+  
+    <% if (nextPage !== null) { %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+   
+  
+    
+  
+  
+  
+  </section>
